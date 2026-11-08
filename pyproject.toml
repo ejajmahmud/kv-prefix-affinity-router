@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kv-prefix-affinity-router"
+version = "0.1.0"
+description = "Prompt prefix affinity load balancer routing incoming agent queries to inference nodes caching matching KV prefixes"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Ejaj Mahmud", email = "dev@ejajmahmud.com"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+dependencies = []
+
+[project.scripts]
+kv-prefix-affinity-router = "kv_prefix_affinity_router.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["kv_prefix_affinity_router*"]
